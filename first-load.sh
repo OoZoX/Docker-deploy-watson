@@ -19,7 +19,7 @@ echo "$PASSWORD" | sudo -S groupadd public
 echo "$PASSWORD" | sudo -S usermod -a -G public alice
 echo "$PASSWORD" | sudo -S usermod -a -G public bob
 echo "$PASSWORD" | sudo -S chgrp public /secure/public
-echo "$PASSWORD" | sudo -S chmod 777 public
+echo "$PASSWORD" | sudo -S chmod 777 /secure/public
 
 # Générer une paire de clés RSA pour le dossier public
 RSA_PRIVATE_KEY="$KEY_DIR/public_rsa_private.key"
