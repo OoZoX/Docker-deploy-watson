@@ -26,7 +26,5 @@ COPY first-load.sh /usr/local/bin/first-load.sh
 RUN chmod +x /usr/local/bin/first-load.sh \
 #    && addgroup -S nonroot \
 #    && adduser -S nonroot -G nonroot
-
 #USER nonroot
-    
 # ENTRYPOINT ["exec /usr/sbin/sshd -D"]
