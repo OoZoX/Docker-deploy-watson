@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y \
     openssl \
     openssh-server \
     sudo -y \
-    rm -rf /var/lib/apt/lists/* \
+    && rm -rf /var/lib/apt/lists/* \
     mkdir /var/run/sshd \
     useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1000 bob \
     echo 'bob:root123' | chpasswd \
