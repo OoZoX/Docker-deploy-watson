@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Exécution de SSH"
-exec /usr/sbin/sshd -D
+# exec /usr/sbin/sshd -D
 
 
 

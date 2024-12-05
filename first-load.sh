@@ -9,13 +9,13 @@ KEY_DIR="/secure/keys"
 
 PASSWORD="root123"
 # Création des répertoires
-echo "$PASSWORD" | sudo mkdir -p $BOB_DIR $PUBLIC_DIR $ALICE_DIR $KEY_DIR
+echo "$PASSWORD" | sudo -S mkdir -p $BOB_DIR $PUBLIC_DIR $ALICE_DIR $KEY_DIR
 
 # Générer une paire de clés RSA pour le dossier public
 RSA_PRIVATE_KEY="$KEY_DIR/public_rsa_private.key"
 RSA_PUBLIC_KEY="$KEY_DIR/public_rsa_public.key"
-echo "$PASSWORD" | sudoopenssl genrsa -out $RSA_PRIVATE_KEY 2048
-echo "$PASSWORD" | sudoopenssl rsa -in $RSA_PRIVATE_KEY -pubout -out $RSA_PUBLIC_KEY
+openssl genrsa -out $RSA_PRIVATE_KEY 2048
+openssl rsa -in $RSA_PRIVATE_KEY -pubout -out $RSA_PUBLIC_KEY
 echo "Clés RSA générées pour le dossier public : $RSA_PRIVATE_KEY et $RSA_PUBLIC_KEY"
 
 # Générer des clés symétriques avec CKMS
