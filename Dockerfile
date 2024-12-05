@@ -2,11 +2,10 @@
 FROM ghcr.io/cosmian/kms:4.20.0
 
 # Installation des dépendances nécessaires
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y && rm -rf /var/lib/apt/lists/* \
     openssl \
     openssh-server \
     sudo -y \
-    && rm -rf /var/lib/apt/lists/* \
     mkdir /var/run/sshd \
     useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1000 bob \
     echo 'bob:root123' | chpasswd \
