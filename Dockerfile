@@ -8,8 +8,8 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 RUN mkdir /var/run/sshd
 RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1000 bob
-RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1000 alice
 RUN echo 'bob:root123' | chpasswd
+RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1000 alice
 RUN echo 'alice:root123' | chpasswd
 RUN service ssh start
 
