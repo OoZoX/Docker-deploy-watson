@@ -6,5 +6,6 @@ USER="bob"
 HOST="10.10.1.21"
 PORT=2222
 PASSWORD="root123"
-sshpass -p "$PASSWORD" ssh -o StrictHostKeyChecking=no UserKnownHostsFile=/dev/null -p "$PORT" "$USER@$HOST" "/usr/local/bin/first-load.sh"
+ssh-keyscan -p 2222 10.10.1.21 >> ~/.ssh/known_hosts
+sshpass -p "$PASSWORD" ssh -p "$PORT" "$USER@$HOST" "/usr/local/bin/first-load.sh"
 
