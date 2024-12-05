@@ -22,5 +22,3 @@ echo "Clés RSA générées pour le dossier public : $RSA_PRIVATE_KEY et $RSA_PU
 echo "$PASSWORD" | sudo -S ckms sym keys create --number-of-bits 256 --algorithm aes --tag key-bob-aes || { echo "Erreur CKMS : création de key-bob-aes échouée"; exit 1; }
 echo "$PASSWORD" | sudo -S ckms sym keys create --number-of-bits 256 --algorithm aes --tag key-alice-aes || { echo "Erreur CKMS : création de key-alice-aes échouée"; exit 1; }
 echo "Clés CKMS créées pour Bob et Alice."
-
-exec bash
