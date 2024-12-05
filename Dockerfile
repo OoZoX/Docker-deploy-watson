@@ -12,18 +12,17 @@ RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1000 bob
 RUN echo 'bob:root123' | chpasswd
 RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 999 alice
 RUN echo 'alice:root123' | chpasswd
-# RUN service ssh start
+RUN service ssh start
 
-# EXPOSE 22
+EXPOSE 22
 
 # Copier les scripts init.sh et decrypt.sh dans le conteneur
 COPY first-load.sh /usr/local/bin/first-load.sh
-COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 
 # Rendre les scripts exécutables
 RUN chmod +x /usr/local/bin/first-load.sh
-RUN chmod +x /usr/local/bin/entrypoint.sh
+
 RUN usermod -aG sudo bob
 RUN usermod -aG sudo alice
 
-# ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+# ENTRYPOINT ["exec /usr/sbin/sshd -D"]
