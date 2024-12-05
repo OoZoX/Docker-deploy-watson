@@ -5,6 +5,7 @@ FROM ghcr.io/cosmian/kms
 RUN apt-get update && apt-get install -y \
     openssl \
     openssh-server \
+    sudo -y \
     && rm -rf /var/lib/apt/lists/*
 RUN mkdir /var/run/sshd
 RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1000 bob
