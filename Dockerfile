@@ -23,5 +23,7 @@ COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 # Rendre les scripts exécutables
 RUN chmod +x /usr/local/bin/first-load.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
+RUN usermod -aG sudo bob
+RUN usermod -aG sudo alice
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
