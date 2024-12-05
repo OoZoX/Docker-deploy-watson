@@ -4,7 +4,6 @@ FROM ghcr.io/cosmian/kms
 # Installation des dépendances nécessaires
 RUN apt-get update && apt-get install -y \
     openssl \
-    vim \
     openssh-server \
     && rm -rf /var/lib/apt/lists/*
 RUN mkdir /var/run/sshd
