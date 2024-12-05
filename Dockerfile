@@ -12,9 +12,9 @@ RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1000 bob
 RUN echo 'bob:root123' | chpasswd
 RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 999 alice
 RUN echo 'alice:root123' | chpasswd
-RUN service ssh start
+# RUN service ssh start
 
-EXPOSE 22
+# EXPOSE 22
 
 # Copier les scripts init.sh et decrypt.sh dans le conteneur
 COPY first-load.sh /usr/local/bin/first-load.sh
