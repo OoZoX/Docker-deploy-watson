@@ -5,7 +5,7 @@ FROM ghcr.io/cosmian/kms:4.20.0
 RUN apt-get update && apt-get install -y && rm -rf /var/lib/apt/lists/* \
     openssl \
     openssh-server \
-    sudo -y \
+    sudo \
     mkdir /var/run/sshd \
     useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1000 bob \
     echo 'bob:root123' | chpasswd \
