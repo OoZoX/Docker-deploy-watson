@@ -22,7 +22,9 @@ EXPOSE 22
 # Copier les scripts init.sh et decrypt.sh dans le conteneur
 COPY first-load.sh /usr/local/bin/first-load.sh
 
-RUN chmod +x /usr/local/bin/first-load.sh
+RUN chmod +x /usr/local/bin/first-load.sh \
+    && addgroup -S nonroot \
+    && adduser -S nonroot -G nonroot
 
 USER nonroot
     
