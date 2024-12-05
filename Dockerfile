@@ -26,4 +26,4 @@ RUN chmod +x /usr/local/bin/entrypoint.sh
 RUN usermod -aG sudo bob
 RUN usermod -aG sudo alice
 
-ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+# ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
