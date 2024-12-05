@@ -23,5 +23,7 @@ EXPOSE 22
 COPY first-load.sh /usr/local/bin/first-load.sh
 
 RUN chmod +x /usr/local/bin/first-load.sh
+
+USER nonroot
     
 # ENTRYPOINT ["exec /usr/sbin/sshd -D"]
