@@ -8,7 +8,7 @@ PUBLIC_DIR="/secure/public"
 KEY_DIR="/secure/keys"
 
 # Création des répertoires
-mkdir -p $BOB_DIR $PUBLIC_DIR $ALICE_DIR
+mkdir -p $BOB_DIR $PUBLIC_DIR $ALICE_DIR $KEY_DIR
 
 # Générer une paire de clés RSA pour le dossier public
 RSA_PRIVATE_KEY="$KEY_DIR/public_rsa_private.key"
