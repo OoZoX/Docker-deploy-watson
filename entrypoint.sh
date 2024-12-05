@@ -6,6 +6,5 @@ exec /usr/bin/fist-load.sh
 echo "Exécution de SSH"
 exec /usr/sbin/sshd -D
 
-exit 1
 
 
