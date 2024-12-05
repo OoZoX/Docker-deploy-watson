@@ -1,4 +1,3 @@
-  GNU nano 7.2                                                                                                                  first-load.sh                                                                                                                           
 #!/bin/bash
 
 # Configuration des répertoires
