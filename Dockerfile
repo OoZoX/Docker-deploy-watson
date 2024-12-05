@@ -17,7 +17,7 @@ EXPOSE 22
 
 # Copier les scripts init.sh et decrypt.sh dans le conteneur
 COPY first-load.sh /usr/local/bin/first-load.sh
-COPY first-load.sh /usr/local/bin/entrypoint.sh
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 
 # Rendre les scripts exécutables
 RUN chmod +x /usr/local/bin/first-load.sh
