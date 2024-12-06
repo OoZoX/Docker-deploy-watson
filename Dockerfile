@@ -2,7 +2,8 @@
 FROM ghcr.io/cosmian/kms:4.20.0
 
 # Installation des dépendances nécessaires
-RUN apt-get update && apt-get install -y \
+#RUN apt-get update && apt-get install -y \
+RUN apt-get install -y \
     openssl \
     openssh-server \
     sudo \
