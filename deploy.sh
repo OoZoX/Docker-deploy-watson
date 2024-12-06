@@ -1,6 +1,6 @@
 #!/bin/bash
 
-docker run -d -it -p 9998:9998 -p 2222:22 --name data secure-data
+docker run -d -it -p 9998:9998 -p 2222:22 --name data oozox/watson
 docker exec -itd data /usr/sbin/sshd -D
 
 USER="bob"
