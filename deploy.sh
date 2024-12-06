@@ -11,8 +11,9 @@ USER="bob"
 HOST="10.10.1.21"
 PORT=2222
 PASSWORD="root123"
+PATH_SSH="/home/docker-ecole/.ssh/known_hosts"
 
-ssh-keygen -R 10.10.1.21
-ssh-keyscan -p 2222 10.10.1.21 >> /home/docker-ecole/.ssh/known_hosts
+ssh-keygen -R $HOST
+ssh-keyscan -p $PORT $HOST >> $PATH_SSH
 sshpass -p "$PASSWORD" ssh -p "$PORT" "$USER@$HOST" "/usr/local/bin/first-load.sh"
 
